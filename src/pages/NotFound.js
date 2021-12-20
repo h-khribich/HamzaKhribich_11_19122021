@@ -1,12 +1,16 @@
 import React from "react";
-import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 class NotFound extends React.Component {
   render() {
     return (
       <div>
-        <Navigation />
-        <h1>Not Found!</h1>
+        <div className="wrapper">
+          <Header />
+          <h1>Not Found!</h1>
+        </div>
+        <Footer />
       </div>
     );
   }

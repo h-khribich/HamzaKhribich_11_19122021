@@ -1,12 +1,16 @@
 import React from "react";
-import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 class About extends React.Component {
   render() {
     return (
       <div>
-        <Navigation />
-        <h1>À propos</h1>
+        <div className="wrapper">
+          <Header />
+          <h1>À propos</h1>
+        </div>
+        <Footer />
       </div>
     );
   }
