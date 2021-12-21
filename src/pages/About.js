@@ -1,4 +1,5 @@
 import React from "react";
+import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -8,7 +9,7 @@ class About extends React.Component {
       <div>
         <div className="wrapper">
           <Header />
-          <h1>À propos</h1>
+          <Banner about={true} />
         </div>
         <Footer />
       </div>
