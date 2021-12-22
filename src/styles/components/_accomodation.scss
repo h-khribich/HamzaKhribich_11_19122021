@@ -1,0 +1,65 @@
+.accomodation {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3.3rem;
+    row-gap: 3.3rem;
+    justify-content: space-between;
+    background-color: #f6f6f6;
+    border-radius: 25px;
+  }
+
+  &__thumbnail {
+    display: flex;
+    align-items: flex-end;
+    width: 340px;
+    height: 340px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.5 ease-in-out;
+
+    &:hover {
+      animation: hover 0.2s ease-in-out forwards;
+
+      .accomodation__title {
+        animation: hover-title 0.2s ease-in-out forwards;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 1rem;
+    color: white;
+  }
+}
+
+@keyframes hover {
+  from {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  to {
+    transform: scale(1.02);
+    box-shadow: 1px 2px 7px gray;
+  }
+}
+
+@keyframes hover-title {
+  from {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+  }
+
+  to {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: $color-1;
+  }
+}

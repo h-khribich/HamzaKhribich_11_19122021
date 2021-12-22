@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   align-items: flex-end;
+  margin-top: 2rem;
   height: 200px;
   background-color: $color-3;
   font-size: 1.3rem;
@@ -13,7 +14,7 @@
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
-    width: 25%;
+    width: 50%;
     height: 80%;
     padding-bottom: 0.5rem;
   }

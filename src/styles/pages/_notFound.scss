@@ -1,0 +1,30 @@
+.errorMsg {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    gap: 3rem;
+    color: $color-1;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  &__code {
+    font-weight: 700;
+    font-size: 15rem;
+  }
+
+  &__description {
+    font-weight: 500;
+    font-size: 2.3rem;
+  }
+
+  &__homelink {
+    margin-top: auto;
+    color: $color-1;
+    font-size: 1.2rem;
+    text-decoration: underline $color-1;
+  }
+}

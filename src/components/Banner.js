@@ -4,7 +4,7 @@ import BannerImgAbout from "../assets/bannerImg_About.jpg";
 
 class Banner extends React.Component {
   render() {
-    // Displaying different background image depending on page
+    // Displaying different background banner image depending on page
     let setBackgroundImg = () => {
       let backgroundImg = this.props.home ? BannerImgHome : BannerImgAbout;
 
@@ -16,7 +16,7 @@ class Banner extends React.Component {
       };
     };
 
-    // Props display home banner message on homepage only
+    // Props to display home banner message on homepage only
     return (
       <div className="banner" style={setBackgroundImg()}>
         {this.props.home && (
