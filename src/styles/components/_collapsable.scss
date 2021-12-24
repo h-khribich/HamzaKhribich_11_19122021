@@ -1,0 +1,68 @@
+// GENERAL COLLAPSABLE COMPONENT
+.collapsable {
+  cursor: pointer;
+
+  &__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: $color-1;
+  }
+
+  &__description {
+    background-color: $color-2;
+    color: $color-1;
+    animation: opened-description 0.6s ease-out forwards;
+  }
+
+  .opened-arrow {
+    animation: opened-arrow 0.6s ease-in-out forwards;
+  }
+}
+
+// ABOUT PAGE COLLAPSABLE
+.aboutPage-collapsable {
+  margin: 0 auto;
+  width: 85%;
+  padding-bottom: 2.5rem;
+
+  .collapsable__title-wrapper {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    .collapsable__title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .collapsable__description {
+    padding: 2.2rem 1.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    line-height: 34px;
+    font-weight: 400;
+  }
+}
+
+// ANIMATIONS
+@keyframes opened-description {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opened-arrow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

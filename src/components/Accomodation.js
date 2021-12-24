@@ -53,9 +53,9 @@ class Accomodation extends React.Component {
               <h3 className="accomodation__title">{logement.title}</h3>
             </div>
           ))}
-          {data.length % 2 == 0 && (
+          {data.length % 2 === 0 && (
             <div
-              className="accomodation__thumbnail"
+              className="accomodation__thumbnail thumbnail-invisible"
               style={{ opacity: 0 }}
             ></div>
           )}

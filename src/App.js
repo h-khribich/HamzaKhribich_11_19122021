@@ -1,16 +1,18 @@
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import Logement from "./pages/Logement";
 import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="a-propos" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/a-propos" exact component={About} />
+        <Route path="/logement/:logement_id" exact component={Logement} />
+        <Route component={NotFound} />
+      </Switch>
     </BrowserRouter>
   );
 }

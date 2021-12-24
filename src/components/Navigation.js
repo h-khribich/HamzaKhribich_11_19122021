@@ -5,19 +5,14 @@ class Navigation extends React.Component {
   render() {
     return (
       <nav className="navigation">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "active nav-link" : "inactive nav-link"
-          }
-        >
+        <NavLink exact to="/" className="nav-link" activeClassName="active">
           Accueil
         </NavLink>
         <NavLink
+          exact
           to="/a-propos"
-          className={({ isActive }) =>
-            isActive ? "active nav-link" : "inactive nav-link"
-          }
+          className="nav-link"
+          activeClassName="active"
         >
           À propos
         </NavLink>
