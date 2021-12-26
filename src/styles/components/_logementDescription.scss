@@ -1,0 +1,78 @@
+.description {
+  display: flex;
+  justify-content: space-between;
+
+  .title,
+  .location {
+    font-weight: 500;
+    color: $color-1;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    padding: 0.3rem 0;
+  }
+
+  .location {
+    font-size: 1.2rem;
+  }
+
+  .tag-list {
+    display: flex;
+    margin: 1.5rem 0;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.4rem 1.2rem 0.3rem;
+    min-width: 115px;
+    text-align: center;
+    background-color: $color-1;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 10px;
+  }
+
+  .profileAndRating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.3rem;
+
+    .host {
+      display: flex;
+      width: min-content;
+      align-items: center;
+      text-align: right;
+      gap: 0.5rem;
+
+      .name {
+        color: $color-1;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 26px;
+      }
+
+      .picture {
+        width: 64px;
+        height: auto;
+        background-position: cover;
+        border-radius: 50%;
+      }
+    }
+
+    .rating-list {
+      display: flex;
+      gap: 0.5rem;
+
+      .full-star {
+        fill: $color-1;
+      }
+
+      .empty-star {
+        fill: #e3e3e3;
+      }
+    }
+  }
+}

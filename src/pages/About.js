@@ -11,7 +11,7 @@ class About extends React.Component {
         <div className="wrapper">
           <Header />
           <Banner about={true} />
-          <div className="collapsable__group-wrapper">
+          <div className="collapsable__about-group">
             <Collapsable
               title={"Fiabilité"}
               id={"Fiabilité"}

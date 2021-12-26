@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 class Navigation extends React.Component {
   render() {
+    // Links are underlined when active
     return (
       <nav className="navigation">
         <NavLink exact to="/" className="nav-link" activeClassName="active">

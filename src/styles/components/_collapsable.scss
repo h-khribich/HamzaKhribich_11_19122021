@@ -2,12 +2,20 @@
 .collapsable {
   cursor: pointer;
 
+  // Prevent h3 from bugging collapse animation in case of click on the h3
+  h3 {
+    pointer-events: none;
+  }
+
   &__title-wrapper {
     display: flex;
+    position: relative;
+    z-index: 1;
     justify-content: space-between;
     align-items: center;
     color: white;
     background-color: $color-1;
+    transform: translateY(7px);
   }
 
   &__description {
@@ -22,10 +30,13 @@
 }
 
 // ABOUT PAGE COLLAPSABLE
-.aboutPage-collapsable {
+.collapsable__about-group {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  padding-bottom: 2rem;
   width: 85%;
-  padding-bottom: 2.5rem;
+  row-gap: 2.5rem;
 
   .collapsable__title-wrapper {
     padding: 0.8rem 1.5rem;
@@ -36,11 +47,40 @@
   }
 
   .collapsable__description {
-    padding: 2.2rem 1.5rem 1rem;
+    padding: 2rem 1.5rem 1rem;
     border-radius: 5px;
     font-size: 1.5rem;
-    line-height: 34px;
     font-weight: 400;
+    line-height: 36px;
+  }
+}
+
+// LOGEMENT PAGE COLLAPSABLE
+.collapsable__logement-group {
+  display: flex;
+  justify-content: space-between;
+
+  .collapsable {
+    width: 47%;
+
+    &__title-wrapper {
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    &__description {
+      padding: 2.2rem 1.5rem 1rem;
+      height: 250px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 26px;
+    }
   }
 }
 
