@@ -3,6 +3,7 @@ import Collapsable from "../components/Collapsable";
 import LogementDescription from "../components/LogementDescription";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Gallery from "../components/Gallery";
 
 class Logement extends React.Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class Logement extends React.Component {
         <div>
           <div className="wrapper">
             <Header />
+            <Gallery pictures={logement.pictures} />
             <LogementDescription
               title={logement.title}
               location={logement.location}
