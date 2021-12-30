@@ -6,7 +6,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <KasaLogo fill="#FF6060" />
+        <KasaLogo fill="#FF6060" className="logo" />
         <Navigation />
       </div>
     );

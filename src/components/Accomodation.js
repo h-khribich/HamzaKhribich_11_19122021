@@ -44,7 +44,11 @@ class Accomodation extends React.Component {
       return (
         <div className="accomodation__wrapper">
           {data.map((logement) => (
-            <Link key={logement.id} to={`/logement/${logement.id}`}>
+            <Link
+              key={logement.id}
+              to={`/logement/${logement.id}`}
+              className="accomodation__thumbnail-link"
+            >
               <div
                 className="accomodation__thumbnail"
                 style={{

@@ -18,7 +18,10 @@ class Banner extends React.Component {
 
     // Props to display home banner message on homepage only
     return (
-      <div className="banner" style={setBackgroundImg()}>
+      <div
+        className={this.props.about ? "banner banner__about-page" : "banner"}
+        style={setBackgroundImg()}
+      >
         {this.props.home && (
           <h1 className="banner__title">Chez vous, partout et ailleurs</h1>
         )}

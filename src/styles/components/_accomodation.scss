@@ -2,6 +2,7 @@
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     padding: 3.3rem;
     row-gap: 3.3rem;
     justify-content: space-between;
@@ -38,6 +39,8 @@
   }
 }
 
+// ANIMATIONS
+
 @keyframes hover {
   from {
     transform: scale(1);
@@ -61,5 +64,85 @@
     font-size: 1.15rem;
     font-weight: 500;
     color: $color-1;
+  }
+}
+
+// MEDIA QUERIES
+
+@media only screen and (max-width: 1340px) {
+  .accomodation {
+    &__wrapper {
+      padding: 2.5rem;
+      row-gap: 2.5rem;
+    }
+
+    &__thumbnail {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .thumbnail-invisible {
+    display: none;
+  }
+
+  .accomodation {
+    &__wrapper {
+      justify-content: space-around;
+    }
+
+    &__thumbnail {
+      width: 340px;
+      height: 340px;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .accomodation {
+    &__wrapper {
+      justify-content: center;
+    }
+
+    // Thumbnail link is the anchor tag created by React through onClick
+    &__thumbnail-link {
+      width: 85%;
+    }
+
+    &__thumbnail {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .accomodation {
+    &__wrapper {
+      padding: 0;
+      background-color: transparent;
+      row-gap: 1.3rem;
+    }
+
+    &__thumbnail-link {
+      width: 100%;
+    }
+
+    &__thumbnail {
+      height: 255px;
+    }
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .accomodation {
+    &__thumbnail {
+      height: 235px;
+    }
+
+    &__title {
+      font-size: 0.8rem;
+    }
   }
 }

@@ -15,3 +15,37 @@
     font-weight: 500;
   }
 }
+
+// MEDIA QUERIES
+
+@media only screen and (max-width: 1000px) {
+  .banner {
+    margin: 30px 0 23px;
+    &__title {
+      font-size: 2rem;
+      padding: 0 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .banner {
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .banner {
+    border-radius: 10px;
+    height: 110px;
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.banner {
+  &__about-page {
+    height: 220px;
+  }
+}
