@@ -75,10 +75,7 @@ class Gallery extends React.Component {
           <div
             className="wrapper"
             style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgba(71,71,71,0.5) 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 90%, rgba(71,71,71,0.5) 100%), url(" +
-                this.state.backgroundImg +
-                ")",
+              backgroundImage: "url(" + this.state.backgroundImg + ")",
             }}
           >
             <img

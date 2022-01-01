@@ -17,7 +17,6 @@
 }
 
 // MEDIA QUERIES
-
 @media only screen and (max-width: 1000px) {
   .banner {
     margin: 30px 0 23px;
@@ -44,6 +43,7 @@
   }
 }
 
+// About page banner does not need media queries
 .banner {
   &__about-page {
     height: 220px;

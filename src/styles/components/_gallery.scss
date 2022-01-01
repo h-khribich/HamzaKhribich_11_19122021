@@ -5,7 +5,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5rem 0;
+    margin: 1.7rem 0;
     border-radius: 25px;
     background-size: cover;
     background-position: center center;
@@ -33,5 +33,40 @@
 
   .right-arrow {
     transform: rotate(90deg);
+  }
+}
+
+// MEDIA QUERIES
+@media only screen and (max-width: 800px) {
+  .gallery {
+    .wrapper {
+      height: 315px;
+      margin: 1.7rem 0 1.3rem 0;
+    }
+
+    .left-arrow,
+    .right-arrow {
+      width: 56px;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .gallery {
+    .wrapper {
+      margin: 1.6rem 0 1rem 0;
+      height: 255px;
+    }
+
+    .left-arrow,
+    .right-arrow {
+      height: 24px;
+      width: 24px;
+    }
+
+    .counter {
+      display: none;
+    }
   }
 }

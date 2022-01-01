@@ -18,6 +18,10 @@
     transform: translateY(7px);
   }
 
+  &__title {
+    font-weight: 500;
+  }
+
   &__description {
     background-color: $color-2;
     color: $color-1;
@@ -38,20 +42,23 @@
   width: 85%;
   row-gap: 2.5rem;
 
-  .collapsable__title-wrapper {
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    .collapsable__title {
+  .collapsable {
+    &__title-wrapper {
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+    }
+
+    &__title {
       font-size: 1.5rem;
     }
-  }
 
-  .collapsable__description {
-    padding: 2rem 1.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 36px;
+    &__description {
+      padding: 2rem 1.5rem 1rem;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 36px;
+    }
   }
 }
 
@@ -69,13 +76,13 @@
     }
 
     &__title {
-      font-weight: 500;
       font-size: 1.1rem;
     }
 
     &__description {
       padding: 2.2rem 1.5rem 1rem;
-      height: 250px;
+      min-height: 250px;
+      height: fit-content;
       border-radius: 10px;
       font-size: 1.1rem;
       font-weight: 400;
@@ -104,5 +111,69 @@
   }
   to {
     transform: rotate(180deg);
+  }
+}
+
+// MEDIA QUERIES
+@media only screen and (max-width: 800px) {
+  .collapsable {
+    &__about-group,
+    &__logement-group {
+      width: 100%;
+
+      .collapsable {
+        width: 100%;
+        &__title,
+        &__description {
+          font-size: 1rem;
+          line-height: 20px;
+        }
+
+        &__description {
+          min-height: 143px;
+          padding: 1.9rem 1.2rem 0.7rem;
+        }
+      }
+    }
+  }
+
+  .collapsable__logement-group {
+    flex-direction: column;
+    row-gap: 1.2rem;
+    .collapsable__description {
+      min-height: 143px;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .collapsable {
+    &__about-group,
+    &__logement-group {
+      row-gap: 1.2rem;
+      .collapsable {
+        &__title-wrapper {
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+        }
+
+        &__title {
+          font-size: 0.9rem;
+        }
+
+        &__arrow {
+          width: 18px;
+          height: auto;
+        }
+
+        &__description {
+          min-height: 143px;
+          padding: 1.4rem 0.6rem 0.3rem;
+          line-height: 17px;
+          font-size: 0.75rem;
+        }
+      }
+    }
   }
 }
