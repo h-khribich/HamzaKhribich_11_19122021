@@ -17,7 +17,7 @@ class Logement extends React.Component {
   }
   componentDidMount() {
     // Catching id from search params
-    let urlId = this.props.match.params.logement_id;
+    let urlId = this.props.match.params.id;
 
     // Fetching and filtering data by its id
     fetch("/data/logements.json")
