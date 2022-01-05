@@ -4,6 +4,7 @@ import LogementDescription from "../components/LogementDescription";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Gallery from "../components/Gallery";
+import NotFound from "../pages/NotFound";
 
 class Logement extends React.Component {
   constructor(props) {
@@ -15,36 +16,34 @@ class Logement extends React.Component {
       data: [],
     };
   }
-  componentDidMount() {
-    // Catching id from search params
-    let urlId = this.props.match.params.id;
 
-    // Fetching and filtering data by its id
-    fetch("/data/logements.json")
-      .then((res) => res.json())
-      .then(
-        (results) => {
+  // Fetching and filtering data by its id
+  getData(url) {
+    fetch(url)
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        const urlId = this.props.match.params.id;
+        const itemToShow = jsonResponse.find((item) => item.id === urlId);
+
+        if (itemToShow) {
           this.setState({
             isLoaded: true,
-            data: results.filter((result) => result.id === urlId),
+            data: itemToShow,
           });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
+        } else {
+          this.setState({ error: true });
         }
-      );
+      });
   }
-
+  componentDidMount() {
+    this.getData("..//data/logements.json");
+  }
   render() {
     const { error, isLoaded, data } = this.state;
-    const logement = data[0];
 
     // Handling error scenarios
     if (error) {
-      return <div>Erreur: {error.message}</div>;
+      return <NotFound />;
     } else if (!isLoaded) {
       return <div>Chargement...</div>;
     } else {
@@ -53,25 +52,25 @@ class Logement extends React.Component {
         <div>
           <div className="wrapper">
             <Header />
-            <Gallery pictures={logement.pictures} />
+            <Gallery pictures={data.pictures} />
             <LogementDescription
-              title={logement.title}
-              location={logement.location}
-              tags={logement.tags}
-              name={logement.host.name}
-              picture={logement.host.picture}
-              rating={logement.rating}
+              title={data.title}
+              location={data.location}
+              tags={data.tags}
+              name={data.host.name}
+              picture={data.host.picture}
+              rating={data.rating}
             />
             <div className="collapsable__logement-group">
               <Collapsable
                 title={"Description"}
                 id={"Description"}
-                description={logement.description}
+                description={data.description}
               />
               <Collapsable
                 title={"Équipements"}
                 id={"Équipements"}
-                equipments={logement.equipments}
+                equipments={data.equipments}
               />
             </div>
           </div>
